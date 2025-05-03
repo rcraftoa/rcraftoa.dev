@@ -61,7 +61,7 @@ function Skill({ source, skill }: Props) {
         <img width={32} height={32} src={source} alt="css-logo" />
       </i>
       <span className="text-sm mr-4 leading-normal">
-        <h3 className="font-bold dark:text-white">{skill}</h3>
+        <h5 className="font-bold dark:text-white">{skill}</h5>
       </span>
     </div>
   );

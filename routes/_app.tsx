@@ -1,7 +1,7 @@
-import { AppProps } from "$fresh/server.ts";
+import { PageProps } from "$fresh/server.ts";
 import BaseHead from "../components/base-head.jsx";
 
-export default function App({ Component }: AppProps) {
+export default function App({ Component }: PageProps) {
   const description =
     "Artículos y tutoriales especializados en Frontend, Backend y rendimiento web. Potencia tu proyecto digital con nuestras recomendaciones. ¡Embárcate en el viaje hacia la excelencia en el desarrollo web!";
   const title =

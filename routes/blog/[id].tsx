@@ -1,5 +1,5 @@
 import { Handlers, PageProps } from "$fresh/server.ts";
-import { loadPost } from "../../utils/posts.ts";
+import { loadPost } from "../../lib/posts.ts";
 import Markdown from "../../components/Markdown/Markdown.tsx";
 import {
   TAGS_IMAGES,

@@ -1,5 +1,5 @@
 import { Handlers, PageProps } from "$fresh/server.ts";
-import { listPosts } from "../../utils/posts.ts";
+import { listPosts } from "../../lib/posts.ts";
 import ListArticle from "../../components/list-articles.tsx";
 
 export const handler: Handlers = {

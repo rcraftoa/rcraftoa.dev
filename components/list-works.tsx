@@ -29,9 +29,9 @@ const Works = ({ id, image, title }: Project) => {
               height="720"
             />
           </picture>
-          <h2 class="font-medium mt-2 leading-normal dark:text-white">
+          <h5 class="font-medium mt-2 leading-normal dark:text-white">
             {title}
-          </h2>
+          </h5>
         </article>
       </a>
     </li>

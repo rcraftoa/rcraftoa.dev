@@ -1,5 +1,5 @@
 import { Handlers, PageProps } from "$fresh/server.ts";
-import { loadPost } from "../../utils/p.ts";
+import { loadPost } from "../../lib/p.ts";
 import Markdown from "../../components/Markdown/Markdown.tsx";
 
 export const handler: Handlers = {

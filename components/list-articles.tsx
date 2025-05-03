@@ -39,7 +39,7 @@ const Article = ({ id, title, date, tags }: Post) => {
             <img src={tag} alt="tag" width={50} height={50} />
           </div>
           <div>
-            <h2 class="font-medium dark:text-white leading-5">{title}</h2>
+            <h5 class="font-medium dark:text-white leading-5">{title}</h5>
             <time class="font-light text-xs">
               {Intl.DateTimeFormat("es", { dateStyle: "long" }).format(
                 date,

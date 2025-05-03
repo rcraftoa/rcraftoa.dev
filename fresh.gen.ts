@@ -2,43 +2,44 @@
 // This file SHOULD be checked into source version control.
 // This file is automatically updated during development when running `dev.ts`.
 
-import * as $0 from "./routes/_404.tsx";
-import * as $1 from "./routes/_500.tsx";
-import * as $2 from "./routes/_app.tsx";
-import * as $3 from "./routes/_layout.tsx";
-import * as $4 from "./routes/api/joke.ts";
-import * as $5 from "./routes/blog/[id].tsx";
-import * as $6 from "./routes/blog/index.tsx";
-import * as $7 from "./routes/index.tsx";
-import * as $8 from "./routes/p/[id].tsx";
-import * as $9 from "./routes/proyectos/[id].tsx";
-import * as $10 from "./routes/proyectos/index.tsx";
-import * as $$0 from "./islands/Button.tsx";
-import * as $$1 from "./islands/Counter.tsx";
-import * as $$2 from "./islands/drop-down-menu.tsx";
-import * as $$3 from "./islands/toggle-button.tsx";
+import * as $_404 from "./routes/_404.tsx";
+import * as $_500 from "./routes/_500.tsx";
+import * as $_app from "./routes/_app.tsx";
+import * as $_layout from "./routes/_layout.tsx";
+import * as $api_joke from "./routes/api/joke.ts";
+import * as $blog_id_ from "./routes/blog/[id].tsx";
+import * as $blog_index from "./routes/blog/index.tsx";
+import * as $index from "./routes/index.tsx";
+import * as $p_id_ from "./routes/p/[id].tsx";
+import * as $proyectos_id_ from "./routes/proyectos/[id].tsx";
+import * as $proyectos_index from "./routes/proyectos/index.tsx";
+import * as $Button from "./islands/Button.tsx";
+import * as $Counter from "./islands/Counter.tsx";
+import * as $drop_down_menu from "./islands/drop-down-menu.tsx";
+import * as $toggle_button from "./islands/toggle-button.tsx";
+import type { Manifest } from "$fresh/server.ts";
 
 const manifest = {
   routes: {
-    "./routes/_404.tsx": $0,
-    "./routes/_500.tsx": $1,
-    "./routes/_app.tsx": $2,
-    "./routes/_layout.tsx": $3,
-    "./routes/api/joke.ts": $4,
-    "./routes/blog/[id].tsx": $5,
-    "./routes/blog/index.tsx": $6,
-    "./routes/index.tsx": $7,
-    "./routes/p/[id].tsx": $8,
-    "./routes/proyectos/[id].tsx": $9,
-    "./routes/proyectos/index.tsx": $10,
+    "./routes/_404.tsx": $_404,
+    "./routes/_500.tsx": $_500,
+    "./routes/_app.tsx": $_app,
+    "./routes/_layout.tsx": $_layout,
+    "./routes/api/joke.ts": $api_joke,
+    "./routes/blog/[id].tsx": $blog_id_,
+    "./routes/blog/index.tsx": $blog_index,
+    "./routes/index.tsx": $index,
+    "./routes/p/[id].tsx": $p_id_,
+    "./routes/proyectos/[id].tsx": $proyectos_id_,
+    "./routes/proyectos/index.tsx": $proyectos_index,
   },
   islands: {
-    "./islands/Button.tsx": $$0,
-    "./islands/Counter.tsx": $$1,
-    "./islands/drop-down-menu.tsx": $$2,
-    "./islands/toggle-button.tsx": $$3,
+    "./islands/Button.tsx": $Button,
+    "./islands/Counter.tsx": $Counter,
+    "./islands/drop-down-menu.tsx": $drop_down_menu,
+    "./islands/toggle-button.tsx": $toggle_button,
   },
   baseUrl: import.meta.url,
-};
+} satisfies Manifest;
 
 export default manifest;

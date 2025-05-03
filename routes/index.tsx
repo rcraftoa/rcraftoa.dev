@@ -1,5 +1,5 @@
 import { Handlers, PageProps } from "$fresh/server.ts";
-import { listsHome } from "../utils/home.ts";
+import { listsHome } from "../lib/home.ts";
 import ListArticle from "../components/list-articles.tsx";
 import ListWorks from "../components/list-works.tsx";
 import Skills from "../components/list-skills.tsx";

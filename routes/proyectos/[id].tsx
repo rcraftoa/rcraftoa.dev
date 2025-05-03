@@ -1,5 +1,5 @@
 import { Handlers, PageProps } from "$fresh/server.ts";
-import { loadProject } from "../../utils/projects.ts";
+import { loadProject } from "../../lib/projects.ts";
 import Markdown from "../../components/Markdown/Markdown.tsx";
 
 export const handler: Handlers = {

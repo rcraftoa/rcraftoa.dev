@@ -1,6 +1,6 @@
 import { Handlers, PageProps } from "$fresh/server.ts";
-import { Project } from "../../types.d.ts";
-import { listProjects } from "../../utils/projects.ts";
+import type { Project } from "../../types.d.ts";
+import { listProjects } from "../../lib/projects.ts";
 import ListWorks from "../../components/list-works.tsx";
 
 export const handler: Handlers = {

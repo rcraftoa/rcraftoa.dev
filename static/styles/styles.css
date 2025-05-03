@@ -1,4 +1,9 @@
-html,
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 body {
   height: 100%;
 }
@@ -43,6 +48,7 @@ body {
   list-style: disc;
   padding: 0 0 0 5px;
 }
+
 .dark .prose li {
   color: #fff;
   list-style: disc;
@@ -65,4 +71,78 @@ body {
 .markdown.prose p {
   text-align: justify;
   hyphens: auto;
+}
+
+html {
+  font-family: 'Poppins', sans-serif;
+}
+
+.prose pre {
+  overflow-x: auto;
+  width: auto;
+  background-color:#32302f;
+  color: white;
+}
+
+code {
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+
+h1 {
+  font-size: 2.25rem;
+  font-weight: 600;
+  color: black;
+}
+
+.dark h1 {
+  color: white;
+}
+
+h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: black;
+}
+
+.dark h2 {
+  color: white;
+}
+
+h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: black;
+}
+
+.dark h3 {
+  color: white;
+}
+
+h4 {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: black;
+}
+
+.dark h4 {
+  color: white;
+}
+
+h5, h6 {
+  font-weight: 700;
+  color: black;
+}
+
+.dark h5, .dark h6 {
+  color: white;
+}
+
+p {
+  margin-bottom: 1.5rem;
+  color: #374151;
+}
+
+.dark p {
+  color: #d1d5db;
 }
