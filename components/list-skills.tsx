@@ -10,7 +10,7 @@ const skills = [
   },
   {
     skill: "Css",
-    source: `${path}/css-svgrepo-com.svg`,
+    source: `${path}/css.svg`,
   },
   {
     skill: "Golang",
