@@ -1,6 +1,6 @@
 import { useEffect, useState } from "preact/hooks";
-import { SunIcon } from "../components/Navbar/icons/SunIcon.tsx";
-import { MoonIcon } from "../components/Navbar/icons/MoonIcon.tsx";
+import { SunIcon } from "../components/Icons/SunIcon.tsx";
+import { MoonIcon } from "../components/Icons/MoonIcon.tsx";
 
 const themes = ["dark"];
 
