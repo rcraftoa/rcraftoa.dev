@@ -13,6 +13,7 @@ const DropdownMenu: FunctionComponent<DropdownMenuProps> = ({ menuItems }) => {
     <div className="block sm:hidden">
       <div className="dropdown items-center">
         <button
+          type="button"
           className="p-1 w-9 h-9"
           onClick={toggleMenu}
           aria-label="Menu de navegación"
