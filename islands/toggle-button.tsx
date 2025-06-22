@@ -10,13 +10,13 @@ const ToggleButton = () => {
     if (typeof window === "undefined") {
       return undefined;
     }
-    if (localStorage && localStorage.getItem("theme")) {
-      return localStorage.getItem("theme");
+    if (globalThis.localStorage && globalThis.localStorage.getItem("theme")) {
+      return globalThis.localStorage.getItem("theme");
     }
   });
   const toggleTheme = () => {
     const t = theme === "light" ? "dark" : "light";
-    localStorage.setItem("theme", t);
+    globalThis.localStorage.setItem("theme", t);
     setTheme(t);
   };
 
