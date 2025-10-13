@@ -1,10 +1,6 @@
 import type { Post } from "../types.d.ts";
 import { extract } from "$std/front_matter/any.ts";
-import { unified } from "unified";
-import remarkParse from "remark-parse";
-import remarkRehype from "remark-rehype";
-import rehypeStringify from "rehype-stringify";
-import remarkGfm from "remark-gfm";
+import { render } from "@deno/gfm";
 
 export async function loadPost(id: string): Promise<Post | null> {
   const raw = await Deno.readTextFile(`./content/posts/${id}.md`).catch(
@@ -13,18 +9,11 @@ export async function loadPost(id: string): Promise<Post | null> {
   if (!raw) return null;
   const { attrs, body } = extract(raw);
   const params = attrs as Record<string, string>;
-  const file = await unified()
-    .use(remarkParse)
-    .use(remarkGfm)
-    .use(remarkRehype)
-    .use(rehypeStringify)
-    .use(rehypeStringify)
-    .process(body);
 
   const post: Post = {
     id,
     title: params.title,
-    body: String(file),
+    body: render(body),
     date: new Date(params.date),
     excerpt: params.excerpt,
     tags: params.tags,

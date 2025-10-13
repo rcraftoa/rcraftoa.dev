@@ -10,6 +10,7 @@
   "lint": { "rules": { "tags": ["fresh", "recommended"] } },
   "exclude": ["**/_fresh/*"],
   "imports": {
+    "@deno/gfm": "jsr:@deno/gfm@^0.11.0",
     "preact": "npm:preact@^10.27.2",
     "@preact/signals": "npm:@preact/signals@^2.3.!",
     "@fresh/plugin-vite": "jsr:@fresh/plugin-vite@^1.0.5",
@@ -18,13 +19,6 @@
     "@tailwindcss/vite": "npm:@tailwindcss/vite@^4.1.12",
     "typography": "npm:@tailwindcss/typography",
     "$std/": "https://deno.land/std@0.224.0/",
-    "refractor": "https://esm.sh/refractor@4.8.0",
-    "refractor/": "https://esm.sh/refractor@4.8.0/",
-    "unified": "https://esm.sh/unified@10.1.2",
-    "remark-parse": "https://esm.sh/remark-parse@10.0.1",
-    "remark-rehype": "https://esm.sh/remark-rehype@10.1.0",
-    "rehype-stringify": "https://esm.sh/rehype-stringify@9.0.3",
-    "remark-gfm": "https://esm.sh/remark-gfm@3.0.1",
     "fresh": "jsr:@fresh/core@^2.1.2"
   },
   "compilerOptions": {

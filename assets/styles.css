@@ -9,6 +9,16 @@
   --color-whipacity: rgba(255, 255, 255, 0.4);
 }
 
+:root {
+  --color-canvas-subtle: rgba(255, 255, 255, 0.4);
+  --bgColor-muted: rgba(255, 255, 255, 0.4);
+}
+
+.dark:root  {
+  --color-canvas-subtle: #1d2021;
+  --bgColor-muted: #1d2021;
+}
+
 body {
   height: 100%;
 }
