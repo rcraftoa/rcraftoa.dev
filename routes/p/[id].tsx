@@ -1,16 +1,20 @@
-import { Handlers, PageProps } from "$fresh/server.ts";
 import { loadPost } from "../../lib/p.ts";
 import Markdown from "../../components/Markdown/Markdown.tsx";
+import { define } from "../../utils.ts";
 
-export const handler: Handlers = {
-  async GET(request, context) {
-    const { id } = context.params;
+export const handler = define.handlers({
+  async GET(ctx) {
+    const { id } = ctx.params;
     const post = await loadPost(id);
-    return context.render({ post });
+    return { data: { post } };
   },
-};
-function PagePost(props: PageProps) {
+});
+
+export default define.page<typeof handler>(function PagePost(props) {
   const { post } = props?.data || {};
+
+  if (!post) return <div>No post found</div>;
+
   return (
     <section class="max-w-2xl mx-auto">
       <header class="mb-6">
@@ -19,6 +23,4 @@ function PagePost(props: PageProps) {
       <Markdown body={post.body} />
     </section>
   );
-}
-
-export default PagePost;
+});

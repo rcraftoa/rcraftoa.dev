@@ -1,8 +1,13 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@theme {
+  --font-sans: "Poppins", system-ui, sans-serif;
+  --color-gruvbox: #f7f1ea;
+  --color-gruvbox-dark: #282828;
+  --color-whipacity: rgba(255, 255, 255, 0.4);
+}
 
 body {
   height: 100%;
@@ -74,13 +79,13 @@ body {
 }
 
 html {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 .prose pre {
   overflow-x: auto;
   width: auto;
-  background-color:#32302f;
+  background-color: #32302f;
   color: white;
 }
 
@@ -129,12 +134,14 @@ h4 {
   color: white;
 }
 
-h5, h6 {
+h5,
+h6 {
   font-weight: 700;
   color: black;
 }
 
-.dark h5, .dark h6 {
+.dark h5,
+.dark h6 {
   color: white;
 }
 

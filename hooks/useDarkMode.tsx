@@ -1,4 +1,4 @@
-import { useState, useEffect } from "preact/hooks";
+import { useEffect, useState } from "preact/hooks";
 
 declare global {
   interface WindowEventMap {
@@ -37,7 +37,10 @@ export function useLocalStorage<T>(
   return [storedValue, setValue];
 }
 
-const useDarkMode = (): [boolean, (value: boolean | ((prevState: boolean) => boolean)) => void] => {
+const useDarkMode = (): [
+  boolean,
+  (value: boolean | ((prevState: boolean) => boolean)) => void,
+] => {
   const [enabled, setEnabled] = useLocalStorage<boolean>("dark-theme", false);
 
   useEffect(() => {

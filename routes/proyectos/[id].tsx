@@ -1,15 +1,16 @@
-import { Handlers, PageProps } from "$fresh/server.ts";
 import { loadProject } from "../../lib/projects.ts";
 import Markdown from "../../components/Markdown/Markdown.tsx";
+import { define } from "../../utils.ts";
 
-export const handler: Handlers = {
-  async GET(request, context) {
-    const { id } = context.params;
+export const handler = define.handlers({
+  async GET(ctx) {
+    const { id } = ctx.params;
     const post = await loadProject(id);
-    return context.render({ post });
+    return { data: { post } };
   },
-};
-function PageProject(props: PageProps) {
+});
+
+export default define.page(function PageProject(props) {
   const { post: { title, body, image } } = props?.data || {};
   return (
     <article class="max-w-2xl mx-auto divide-y divide-black dark:divide-white">
@@ -32,6 +33,4 @@ function PageProject(props: PageProps) {
       </article>
     </article>
   );
-}
-
-export default PageProject;
+});

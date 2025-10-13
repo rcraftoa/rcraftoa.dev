@@ -1,23 +1,21 @@
-import { Handlers, PageProps } from "$fresh/server.ts";
 import { listPosts } from "../../lib/posts.ts";
 import ListArticle from "../../components/list-articles.tsx";
+import { define } from "../../utils.ts";
 
-export const handler: Handlers = {
-  async GET(req, context) {
+export const handler = define.handlers({
+  async GET(_ctx) {
     const posts = await listPosts();
-    return context.render({ posts });
+    return { data: { posts } };
   },
-};
-function Blog(props: PageProps) {
-  const { data: { posts } } = props;
+});
+
+export default define.page<typeof handler>(function Blog(props) {
   return (
     <section class="max-w-2xl mx-auto">
       <h2 class="text-xl font-semibold">
         Últimos artículos
       </h2>
-      <ListArticle rows={posts} max={100} />
+      <ListArticle rows={props.data.posts} max={100} />
     </section>
   );
-}
-
-export default Blog;
+})

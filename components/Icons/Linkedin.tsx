@@ -1,5 +1,10 @@
 export const Linkedin = () => (
-  <svg viewBox="0 0 192 192" xmlns="http://www.w3.org/2000/svg" stroke="currentColor" fill="none">
+  <svg
+    viewBox="0 0 192 192"
+    xmlns="http://www.w3.org/2000/svg"
+    stroke="currentColor"
+    fill="none"
+  >
     <rect
       width="132"
       height="132"

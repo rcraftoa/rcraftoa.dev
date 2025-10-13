@@ -1,4 +1,4 @@
-import { PageProps } from "$fresh/server.ts";
+import { PageProps } from "fresh";
 import { Logo } from "../components/Icons/Logo.tsx";
 import Menu from "../components/menu.tsx";
 import { footerLinks, navbarLinks } from "../constanst/navigation.ts";
@@ -58,5 +58,3 @@ function Footer() {
     </footer>
   );
 }
-
-

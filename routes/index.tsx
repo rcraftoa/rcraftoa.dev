@@ -1,24 +1,22 @@
-import { Handlers, PageProps } from "$fresh/server.ts";
-import { listsHome } from "../lib/home.ts";
 import ListArticle from "../components/list-articles.tsx";
 import ListWorks from "../components/list-works.tsx";
 import Skills from "../components/list-skills.tsx";
 import LinkNext from "../components/link.tsx";
 import Social from "../components/socials.tsx";
 import { Logo } from "../components/Icons/Logo.tsx";
+import { define } from "../utils.ts";
+import { listPosts } from "../lib/posts.ts";
+import { listProjects } from "../lib/projects.ts";
 
-export const handler: Handlers = {
-  async GET(req, context) {
-    const lists = await listsHome();
-    return context.render({ lists });
-  },
-};
-export default function Home(props: PageProps) {
-  const {
-    data: {
-      lists: { posts, projects },
-    },
-  } = props;
+export const handler = define.handlers({
+  async GET(_ctx) {
+    const posts = await listPosts();
+    const projects = await listProjects();
+    return { data: { posts, projects } };
+  }
+})
+
+export default define.page<typeof handler>(function Home(props) {
   return (
     <section class="flex justify-between flex-col md:grid md:grid-cols-3 lg:grid-cols-4 lg:grid-flow-col gap-4 max-w-6xl mx-auto">
       <aside class="mx-auto md:mx-0 lg:row-span-3">
@@ -51,16 +49,16 @@ export default function Home(props: PageProps) {
         <h2 class="text-xl font-semibold dark:text-white">
           Últimos artículos
         </h2>
-        <ListArticle rows={posts} max={10} />
+        <ListArticle rows={props.data.posts} max={10} />
         <LinkNext to="blog" text="Artículos anteriores" />
       </section>
       <section class="row-span-2 col-span-3 md:col-span-1">
         <h2 class="text-xl font-semibold dark:text-white">
           Últimos proyectos
         </h2>
-        <ListWorks rows={projects} max={5} />
+        <ListWorks rows={props.data.projects} max={5} />
         <LinkNext to="proyectos" text="Proyectos anteriores" />
       </section>
     </section>
   );
-}
+});

@@ -4,7 +4,7 @@ export interface Post {
   body: string;
   date: Date;
   excerpt: string;
-  tags: string
+  tags: string;
 }
 
 export interface Project {

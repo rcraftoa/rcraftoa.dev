@@ -1,4 +1,4 @@
-import { PageProps } from "$fresh/server.ts";
+import { PageProps } from "fresh";
 import BaseHead from "../components/base-head.jsx";
 
 export default function App({ Component }: PageProps) {

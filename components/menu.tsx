@@ -18,7 +18,7 @@ const Menu: FunctionComponent<DropdownMenuProps> = ({ menuItems }) => {
             <li class="list-none" key={href}>
               <a
                 href={href}
-                  class="hover:ring-2 ring-black p-2 rounded-lg flex text-sm flex-col dark:text-gray-300 dark:hover:text-white dark:ring-white items-center transition hover:text-black text-gray-700" 
+                class="hover:ring-2 ring-black p-2 rounded-lg flex text-sm flex-col dark:text-gray-300 dark:hover:text-white dark:ring-white items-center transition hover:text-black text-gray-700"
               >
                 {label}
               </a>
@@ -26,9 +26,9 @@ const Menu: FunctionComponent<DropdownMenuProps> = ({ menuItems }) => {
           ))}
         </ul>
       </nav>
-      <DropdownMenu menuItems={menuItems}/>
+      <DropdownMenu menuItems={menuItems} />
     </>
-  )
-}
+  );
+};
 
 export default Menu;
