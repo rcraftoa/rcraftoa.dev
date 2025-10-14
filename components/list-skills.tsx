@@ -2,7 +2,7 @@ const path = "/skills";
 const skills = [
   {
     skill: "Github",
-    source: `${path}/github-svgrepo-com.svg`,
+    source: `${path}/github.svg`,
   },
   {
     skill: "Html",
@@ -14,7 +14,7 @@ const skills = [
   },
   {
     skill: "Golang",
-    source: `${path}/go-svgrepo-com.svg`,
+    source: `${path}/go.svg`,
   },
   {
     skill: "Java",
@@ -25,20 +25,20 @@ const skills = [
     source: `${path}/python-svgrepo-com.svg`,
   },
   {
-    skill: `Javascript`,
-    source: `${path}/javascript-svgrepo-com.svg`,
+    skill: `TypeScript`,
+    source: `${path}/typescript.svg`,
   },
   {
     skill: "Deno",
-    source: `${path}/deno-svgrepo-com.svg`,
+    source: `${path}/deno.svg`,
   },
   {
     skill: "React",
     source: `${path}/react-svgrepo-com.svg`,
   },
   {
-    skill: "Vue",
-    source: `${path}/vue-svgrepo-com.svg`,
+    skill: "Kotlin",
+    source: `${path}/kotlin.svg`,
   },
 ];
 interface Props {
@@ -49,14 +49,14 @@ interface Props {
 function Skills() {
   return (
     <div class="flex justify-center md:justify-start flex-wrap gap-3 my-4">
-      {skills.map((skill) => <Skill {...skill} />)}
+      {skills.map((skill) => <Skill key={skill.skill} {...skill} />)}
     </div>
   );
 }
 
 function Skill({ source, skill }: Props) {
   return (
-    <div className="flex flex-row shadow-md items-center dark:bg-[#ffffff10] dark:shadow-2xl bg-whipacity rounded-lg flex-row">
+    <div className="flex flex-row shadow-md items-center dark:bg-[#ffffff10] dark:shadow-2xl bg-whipacity rounded-lg">
       <i className="p-2">
         <img width={32} height={32} src={source} alt="css-logo" />
       </i>
