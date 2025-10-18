@@ -1,5 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
 @import "tailwindcss";
+@plugin "daisyui";
+
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
@@ -14,7 +16,7 @@
   --bgColor-muted: rgba(255, 255, 255, 0.4);
 }
 
-.dark:root  {
+.dark:root {
   --color-canvas-subtle: #1d2021;
   --bgColor-muted: #1d2021;
 }

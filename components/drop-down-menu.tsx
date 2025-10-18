@@ -1,49 +1,34 @@
 import { FunctionComponent } from "preact";
-import { useState } from "preact/hooks";
-import { DropdownMenuProps } from "../components/menu.tsx";
+import { DropdownMenuProps } from ".//menu.tsx";
 
 const DropdownMenu: FunctionComponent<DropdownMenuProps> = ({ menuItems }) => {
-  const [isOpen, setIsOpen] = useState(false);
-
-  function toggleMenu() {
-    setIsOpen(!isOpen);
-  }
-
   return (
     <div className="block sm:hidden">
-      <div className="dropdown items-center">
-        <button
-          type="button"
+      <div className="dropdown dropdown-bottom dropdown-end">
+        <div
+          role="button"
+          tabIndex={0}
           className="p-1 w-9 h-9"
-          onClick={toggleMenu}
           aria-label="Menu de navegación"
         >
           <MenuIcon />
-        </button>
-        <div
-          className={`origin-top-right absolute right-0 mt-2 w-56 rounded-md shadow-lg ${
-            isOpen ? "block" : "hidden"
-          }`}
-        >
-          <div className="rounded-md bg-white dark:bg-[#1d1817] shadow-xs">
-            <div
-              className="py-1"
-              role="menu"
-              aria-orientation="vertical"
-              aria-labelledby="options-menu"
-            >
-              {menuItems.map(({ href, label }) => (
-                <a
-                  href={href}
-                  className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-black dark:hover:bg-[#ffffff10] dark:hover:text-white"
-                  key={href}
-                >
-                  {label}
-                </a>
-              ))}
-            </div>
-          </div>
         </div>
+        <ul
+          tabIndex={-1}
+          className={`dropdown-content menu px-0 py-2 mt-2 w-56 bg-white dark:bg-[#1d1817] rounded-lg shadow-lg`}
+        >
+          {menuItems.map(({ href, label }) => (
+            <li>
+              <a
+                href={href}
+                className="block px-4 py-2 text-sm hover:bg-gray-100 dark:hover:bg-[#ffffff10]"
+                key={href}
+              >
+                {label}
+              </a>
+            </li>
+          ))}
+        </ul>
       </div>
     </div>
   );
@@ -52,7 +37,7 @@ const DropdownMenu: FunctionComponent<DropdownMenuProps> = ({ menuItems }) => {
 const MenuIcon = () => (
   <svg
     viewBox="0 0 24 24"
-    className="dark:fill-white fill-white fill-current"
+    className="dark:fill-white fill-current"
     xmlns="http://www.w3.org/2000/svg"
   >
     <g id="SVGRepo_bgCarrier" stroke-width="0"></g>

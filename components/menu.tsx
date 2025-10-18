@@ -1,5 +1,5 @@
 import { FunctionComponent } from "preact";
-import DropdownMenu from "../islands/drop-down-menu.tsx";
+import DropdownMenu from "./drop-down-menu.tsx";
 
 export interface DropdownMenuItemProps {
   href: string;
