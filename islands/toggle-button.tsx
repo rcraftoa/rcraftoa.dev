@@ -1,58 +1,51 @@
-import { useEffect, useState } from "preact/hooks";
+import { useLayoutEffect } from "preact/hooks";
 import { SunIcon } from "../components/Icons/SunIcon.tsx";
 import { MoonIcon } from "../components/Icons/MoonIcon.tsx";
-
-const themes = ["dark"];
+import { useSignal } from "@preact/signals";
 
 const ToggleButton = () => {
-  const [isMounted, setIsMounted] = useState(false);
-  const [theme, setTheme] = useState(() => {
-    if (typeof window === "undefined") {
+  const theme = useSignal((() => {
+    if (import.meta.env.SSR) {
       return undefined;
     }
-    if (globalThis.localStorage && globalThis.localStorage.getItem("theme")) {
-      return globalThis.localStorage.getItem("theme");
+    if (
+      typeof localStorage !== "undefined" && localStorage.getItem("theme")
+    ) {
+      return localStorage.getItem("theme");
     }
-  });
+    if (globalThis.matchMedia("(prefers-color-scheme: dark)").matches) {
+      return "dark";
+    }
+    return "light";
+  })());
+
   const toggleTheme = () => {
-    const t = theme === "light" ? "dark" : "light";
-    globalThis.localStorage.setItem("theme", t);
-    setTheme(t);
+    const t = theme.value === "light" ? "dark" : "light";
+    localStorage.setItem("theme", t);
+    theme.value = t;
   };
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     const root = document.documentElement;
-    theme === "light"
+    theme.value === "light"
       ? root.classList.remove("dark")
       : root.classList.add("dark");
-  }, [theme]);
+  }, [theme.value]);
 
-  useEffect(() => {
-    setIsMounted(true);
-  }, []);
+  const isDark = theme.value === "dark";
 
-  return isMounted
-    ? (
-      <div>
-        {themes.map((t) => {
-          const checked = t === theme;
-          return (
-            <button
-              type="button"
-              key={t}
-              onClick={toggleTheme}
-              class="flex justify-center items-center dark:bg-[#ffdf9a] dark:hover:bg-[#eeca7a] p-2 rounded-lg bg-[#aa8ee4] hover:bg-[#8b71c4] w-9 h-9 focus:outline-none"
-              aria-label={checked
-                ? "Cambiar a modo claro"
-                : "Cambiar a modo oscuro"}
-            >
-              {checked ? <SunIcon /> : <MoonIcon />}
-            </button>
-          );
-        })}
-      </div>
-    )
-    : <div />;
+  return (
+    <div>
+      <button
+        type="button"
+        onClick={toggleTheme}
+        class="flex justify-center items-center dark:bg-[#ffdf9a] dark:hover:bg-[#eeca7a] p-2 rounded-lg bg-[#aa8ee4] hover:bg-[#8b71c4] w-9 h-9 focus:outline-none"
+        aria-label={isDark ? "Cambiar a modo claro" : "Cambiar a modo oscuro"}
+      >
+        {!theme.value ? <span /> : isDark ? <SunIcon /> : <MoonIcon />}
+      </button>
+    </div>
+  );
 };
 
 export default ToggleButton;
