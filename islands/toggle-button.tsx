@@ -1,7 +1,7 @@
 import { useLayoutEffect } from "preact/hooks";
 import { SunIcon } from "../components/Icons/SunIcon.tsx";
 import { MoonIcon } from "../components/Icons/MoonIcon.tsx";
-import { useSignal } from "@preact/signals";
+import { useSignal } from "npm:@preact/signals@^2.2.1";
 
 const ToggleButton = () => {
   const theme = useSignal((() => {
