@@ -1,5 +1,5 @@
 import type { Project } from "../types.d.ts";
-import { extract } from "$std/front_matter/any.ts";
+import { extractYaml } from "@std/front-matter";
 import { render } from "@deno/gfm";
 
 export async function loadProject(id: string): Promise<Project | null> {
@@ -9,7 +9,7 @@ export async function loadProject(id: string): Promise<Project | null> {
 
   if (!raw) return null;
 
-  const { attrs, body } = extract(raw);
+  const { attrs, body } = extractYaml(raw);
   const params = attrs as Record<string, string>;
 
   const project: Project = {

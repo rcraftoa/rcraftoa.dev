@@ -1,5 +1,5 @@
 import type { Post } from "../types.d.ts";
-import { extract } from "$std/front_matter/any.ts";
+import { extractYaml } from "@std/front-matter";
 import { render } from "@deno/gfm";
 
 export async function loadPost(id: string): Promise<Post | null> {
@@ -7,7 +7,7 @@ export async function loadPost(id: string): Promise<Post | null> {
     () => null,
   );
   if (!raw) return null;
-  const { attrs, body } = extract(raw);
+  const { attrs, body } = extractYaml(raw);
   const params = attrs as Record<string, string>;
 
   const post: Post = {

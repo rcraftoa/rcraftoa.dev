@@ -1,4 +1,4 @@
-import { extract } from "$std/front_matter/any.ts";
+import { extractYaml } from "@std/front-matter";
 import { P } from "../types.d.ts";
 import { render } from "@deno/gfm";
 
@@ -7,7 +7,7 @@ export async function loadPost(id: string): Promise<P | null> {
 
   if (!raw) return null;
 
-  const { attrs, body } = extract(raw);
+  const { attrs, body } = extractYaml(raw);
   const params = attrs as Record<string, string>;
 
   const post: P = {
