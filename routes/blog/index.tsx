@@ -18,4 +18,4 @@ export default define.page<typeof handler>(function Blog(props) {
       <ListArticle rows={props.data.posts} max={100} />
     </section>
   );
-})
+});

@@ -13,8 +13,8 @@ export const handler = define.handlers({
     const posts = await listPosts();
     const projects = await listProjects();
     return { data: { posts, projects } };
-  }
-})
+  },
+});
 
 export default define.page<typeof handler>(function Home(props) {
   return (

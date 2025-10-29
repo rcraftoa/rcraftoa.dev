@@ -11,7 +11,6 @@ interface MarkdownProps {
   body: string;
 }
 
-
 const Markdown = ({ body }: MarkdownProps) => (
   <div>
     <style
