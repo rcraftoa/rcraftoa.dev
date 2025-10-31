@@ -14,7 +14,7 @@ export const handler = define.handlers({
   },
 });
 
-export default define.page<typeof handler>(function PagePost(props) {
+export default define.page<typeof handler>((props) => {
   const { post } = props?.data || {};
 
   if (!post) return <div>No post found</div>;
@@ -25,13 +25,14 @@ export default define.page<typeof handler>(function PagePost(props) {
   const tag = TAGS_IMAGES[nameTag] || TAGS_IMAGES_DEFAULT;
   return (
     <article class="max-w-2xl mx-auto">
-      <header class="mb-10 flex flex-row gap-4">
-        <aside className="w-28 h-28">
-          <img src={tag} aria-label="image" />
-        </aside>
-        <section>
-          <h1 class="text-4xl font-semibold">{title}</h1>
-          <time class="text-gray-800 dark:text-gray-400 text-sm">
+      <header class="mb-10 flex flex-col gap-4">
+        <h1 class="text-4xl font-semibold">{title}</h1>
+        <section className="flex mx-auto w-full gap-2">
+          <div className="size-5">
+            <img src={tag} aria-label="image" />
+          </div>
+          <span>|</span>
+          <time class="text-gray-800 dark:text-gray-400 text-lg">
             {Intl.DateTimeFormat("es", { dateStyle: "long" }).format(
               date,
             )}
