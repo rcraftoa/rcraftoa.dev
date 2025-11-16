@@ -18,7 +18,7 @@ const Works = ({ id, image, title }: Project) => {
   return (
     <li class="list-none">
       <a href={`/proyectos/${id}`}>
-        <article class="rounded-lg shadow-md dark:bg-[#ffffff10] dark:shadow-2xl bg-whipacity py-2 px-3 my-4 w-full">
+        <article class="py-2 px-3 my-4 w-full">
           <picture>
             <source srcset={`/projects/${image}.avif`} type="image/avif" />
             <img
@@ -29,9 +29,9 @@ const Works = ({ id, image, title }: Project) => {
               height="720"
             />
           </picture>
-          <h5 class="font-medium mt-2 leading-normal dark:text-white">
+          <span class="font-medium mt-2 leading-normal">
             {title}
-          </h5>
+          </span>
         </article>
       </a>
     </li>

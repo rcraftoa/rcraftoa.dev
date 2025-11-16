@@ -20,11 +20,9 @@ export const TAGS_IMAGES: TagImages = {
 };
 
 const ListArticle: FunctionComponent<Props> = ({ rows, max }) => {
-  const articles = rows.slice(0, max).map((post: Post) => (
-    <Article
-      {...post}
-    />
-  ));
+  const articles = rows
+    .slice(0, max)
+    .map((post: Post) => <Article key={post.id} {...post} />);
   return <ul className="mx-0">{articles}</ul>;
 };
 
@@ -33,17 +31,17 @@ const Article = ({ id, title, date, tags }: Post) => {
   const tag = TAGS_IMAGES[nameTag] || TAGS_IMAGES_DEFAULT;
   return (
     <li className="list-none">
-      <a href={`/blog/${id}`}>
-        <article class="flex flex-row rounded-lg shadow-md dark:bg-[#ffffff10] dark:shadow-2xl bg-whipacity py-3 px-2 gap-4 my-4 w-full">
+      <a href={`/blog/${id}`} className="group">
+        <article class="flex flex-row py-3 px-2 gap-4 my-4 w-full">
           <div class="flex items-center justify-center">
             <img src={tag} alt="tag" width={50} height={50} />
           </div>
           <div>
-            <h5 class="font-medium dark:text-white leading-5">{title}</h5>
+            <span class="block font-medium dark:text-white leading-5 group-hover:underline">
+              {title}
+            </span>
             <time class="font-light text-xs">
-              {Intl.DateTimeFormat("es", { dateStyle: "long" }).format(
-                date,
-              )}
+              {Intl.DateTimeFormat("es", { dateStyle: "long" }).format(date)}
             </time>
           </div>
         </article>

@@ -8,7 +8,6 @@
   --font-poppins: "Poppins", system-ui, sans-serif;
   --color-gruvbox: #f7f1ea;
   --color-gruvbox-dark: #282828;
-  --color-whipacity: rgba(255, 255, 255, 0.4);
 }
 
 :root {
@@ -52,7 +51,7 @@ body {
 
 h1 {
   font-size: 2.25rem;
-  font-weight: 600;
+  font-weight: 700;
 }
 
 h2 {
@@ -72,7 +71,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-weight: 700;
+  font-weight: 600;
 }
 
 h1,

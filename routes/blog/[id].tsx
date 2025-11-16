@@ -29,7 +29,7 @@ export default define.page<typeof handler>((props) => {
         <h1 class="text-4xl font-semibold">{title}</h1>
         <section className="flex items-center mx-auto w-full gap-2">
           <a
-            class="flex items-center gap-1 rounded-2xl shadow-md dark:bg-[#ffffff10] dark:shadow-2xl bg-whipacity"
+            class="flex items-center gap-1"
             href={`/blog/category/${tags}`}
           >
             <div className="size-5">
