@@ -56,7 +56,7 @@ function Skills() {
 
 function Skill({ source, skill }: Props) {
   return (
-    <div className="flex flex-row shadow-md items-center dark:shadow-2xl rounded-lg">
+    <div className="flex flex-row items-center">
       <i className="p-2">
         <img width={32} height={32} src={source} alt="css-logo" />
       </i>
