@@ -1,15 +1,101 @@
 import { PageProps } from "fresh";
-import BaseHead from "../components/base-head.jsx";
 
 export default function App({ Component }: PageProps) {
   const description =
     "Artículos y tutoriales especializados en Frontend, Backend y rendimiento web. Potencia tu proyecto digital con nuestras recomendaciones. ¡Embárcate en el viaje hacia la excelencia en el desarrollo web!";
   const title =
     "Roberto Toalongo 🍐 | Más Allá del Código: Buenas Prácticas en Desarrollo Web";
+
   return (
     <html lang="es">
       <head>
-        <BaseHead title={title} description={description} />
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width,initial-scale=1" />
+        <title>{title}</title>
+        <meta name="description" content={description} />
+        <meta property="og:locale" content="es_ES" />
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={description} />
+        <meta property="og:type" content="website" />
+        {/* <meta property="og:url" content="https://rcraftoa.dev" >*/}
+        <meta property="og:site_name" content="Roberto Toalongo" />
+        <meta name="author" content="rcraftoa" />
+        <link
+          rel="apple-touch-icon"
+          sizes="57x57"
+          href="/favicon/apple-icon-57x57.png"
+        />
+        <link
+          rel="apple-touch-icon"
+          sizes="60x60"
+          href="/favicon/apple-icon-60x60.png"
+        />
+        <link
+          rel="apple-touch-icon"
+          sizes="72x72"
+          href="/favicon/apple-icon-72x72.png"
+        />
+        <link
+          rel="apple-touch-icon"
+          sizes="76x76"
+          href="/favicon/apple-icon-76x76.png"
+        />
+        <link
+          rel="apple-touch-icon"
+          sizes="114x114"
+          href="/favicon/apple-icon-114x114.png"
+        />
+        <link
+          rel="apple-touch-icon"
+          sizes="120x120"
+          href="/favicon/apple-icon-120x120.png"
+        />
+        <link
+          rel="apple-touch-icon"
+          sizes="144x144"
+          href="/favicon/apple-icon-144x144.png"
+        />
+        <link
+          rel="apple-touch-icon"
+          sizes="152x152"
+          href="/favicon/apple-icon-152x152.png"
+        />
+        <link
+          rel="apple-touch-icon"
+          sizes="180x180"
+          href="/favicon/apple-icon-180x180.png"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="192x192"
+          href="/favicon/android-icon-192x192.png"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="32x32"
+          href="/favicon/favicon-32x32.png"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="96x96"
+          href="/favicon/favicon-96x96.png"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="16x16"
+          href="/favicon/favicon-16x16.png"
+        />
+        <link rel="manifest" href="/favicon/manifest.json" />
+        <meta name="msapplication-TileColor" content="#ffffff" />
+        <meta
+          name="msapplication-TileImage"
+          content="/favicon/ms-icon-144x144.png"
+        />
+        <script id="theme" src="/scripts/theme.js" />
       </head>
       <body class="bg-gruvbox w-full text-black dark:bg-gruvbox-dark dark:text-white">
         <Component />

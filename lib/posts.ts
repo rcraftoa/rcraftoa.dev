@@ -40,6 +40,11 @@ export async function listPosts(): Promise<Post[]> {
   return posts;
 }
 
+export async function listPostsByTag(tag: string): Promise<Post[]> {
+  const posts = await listPosts();
+  return posts.filter((post) => post.tags.includes(tag));
+}
+
 export async function listPostsSequencially(): Promise<Post[]> {
   const posts = [];
   for await (const entry of Deno.readDir("./content/posts")) {

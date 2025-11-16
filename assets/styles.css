@@ -5,7 +5,7 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
-  --font-sans: "Poppins", system-ui, sans-serif;
+  --font-poppins: "Poppins", system-ui, sans-serif;
   --color-gruvbox: #f7f1ea;
   --color-gruvbox-dark: #282828;
   --color-whipacity: rgba(255, 255, 255, 0.4);
@@ -14,6 +14,7 @@
 :root {
   --color-canvas-subtle: rgba(255, 255, 255, 0.4);
   --bgColor-muted: rgba(255, 255, 255, 0.4);
+  --default-font-family: var(--font-poppins);
 }
 
 .dark:root {
@@ -21,16 +22,11 @@
   --bgColor-muted: #1d2021;
 }
 
-body {
-  height: 100%;
-}
 :root {
   -moz-tab-size: 4;
   tab-size: 0;
 }
-body {
-  margin: 0;
-}
+
 ::-webkit-scrollbar {
   width: 14px;
 }
@@ -48,50 +44,60 @@ body {
   background-color: #a5a5a5;
 }
 
-.dark .prose a {
-  --tw-text-opacity: 1;
-  color: #fff;
-  color: rgba(255, 255, 255, var(--tw-text-opacity));
+/* Basics */
+body {
+  height: 100%;
 }
 
-.dark .prose strong {
-  --tw-text-opacity: 1;
-  color: #fff;
-  color: rgba(255, 255, 255, var(--tw-text-opacity));
+body {
+  margin: 0;
+}
+h1 {
+  font-size: 2.25rem;
+  font-weight: 600;
+  color: black;
 }
 
-.prose li {
-  color: #000;
-  list-style: disc;
-  padding: 0 0 0 5px;
+h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: black;
 }
 
-.dark .prose li {
-  color: #fff;
-  list-style: disc;
-  padding: 0 0 0 5px;
-}
-.markdown.prose ul > li {
-  padding-left: 0.5em;
+h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: black;
 }
 
-.prose ul {
-  margin: 0 0 0 20px;
-  padding: 0;
+h4 {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: black;
 }
 
-.prose li:last-child {
-  border-bottom: none;
-  padding-bottom: 0;
+h5,
+h6 {
+  font-weight: 700;
+  color: black;
 }
 
-.markdown.prose p {
-  text-align: justify;
-  hyphens: auto;
+p {
+  margin-bottom: 1.5rem;
+  color: #374151;
 }
 
-html {
-  font-family: "Poppins", sans-serif;
+.dark h1,
+.dark h2,
+.dark h3,
+.dark h4,
+.dark h5,
+.dark h6 {
+  color: white;
+}
+
+.dark p {
+  color: #d1d5db;
 }
 
 .prose pre {
@@ -104,64 +110,4 @@ html {
 code {
   padding-left: 1.25rem;
   padding-right: 1.25rem;
-}
-
-h1 {
-  font-size: 2.25rem;
-  font-weight: 600;
-  color: black;
-}
-
-.dark h1 {
-  color: white;
-}
-
-h2 {
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: black;
-}
-
-.dark h2 {
-  color: white;
-}
-
-h3 {
-  font-size: 1.25rem;
-  font-weight: 700;
-  color: black;
-}
-
-.dark h3 {
-  color: white;
-}
-
-h4 {
-  font-size: 1.125rem;
-  font-weight: 700;
-  color: black;
-}
-
-.dark h4 {
-  color: white;
-}
-
-h5,
-h6 {
-  font-weight: 700;
-  color: black;
-}
-
-.dark h5,
-.dark h6 {
-  color: white;
-}
-
-p {
-  margin-bottom: 1.5rem;
-  color: #374151;
-}
-
-.dark p {
-  color: #d1d5db;
 }
