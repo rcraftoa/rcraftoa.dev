@@ -1,6 +1,6 @@
-import { PageProps } from "fresh";
+import { define } from "../utils.ts";
 
-export default function App({ Component }: PageProps) {
+export default define.page((ctx) => {
   const description =
     "Artículos y tutoriales especializados en Frontend, Backend y rendimiento web. Potencia tu proyecto digital con nuestras recomendaciones. ¡Embárcate en el viaje hacia la excelencia en el desarrollo web!";
   const title =
@@ -95,11 +95,10 @@ export default function App({ Component }: PageProps) {
           name="msapplication-TileImage"
           content="/favicon/ms-icon-144x144.png"
         />
-        <script id="theme" src="/scripts/theme.js" />
       </head>
       <body class="bg-gruvbox w-full text-black dark:bg-gruvbox-dark dark:text-white">
-        <Component />
+        <ctx.Component />
       </body>
     </html>
   );
-}
+});

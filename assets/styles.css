@@ -16,7 +16,7 @@
   --default-font-family: var(--font-poppins);
 }
 
-.dark:root {
+html(data-theme="dark") {
   --color-canvas-subtle: #1d2021;
   --bgColor-muted: #1d2021;
 }
